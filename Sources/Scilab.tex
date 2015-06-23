@@ -1,0 +1,77 @@
+\documentclass[11pt,a4paper,french]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[french]{babel}
+
+\usepackage{amssymb,amsmath, bm}
+\title{Retour vers le futur}
+\author{Qi \textsc{Sun}}
+\date{22 juin 2015}%date{} pour date vide
+
+\def \P{\mathbb{P}}
+\def \E{\mathcal{E}}
+\def \esp{\mathbb{E}}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\clearpage
+
+\section{Coalescence et loi invariante}
+
+\paragraph{T2.}
+
+\[\mathbb{P}(A_1)=\mathbb{P}(\{F_{0,{n_0}k}(X)=F_{0,{n_0}k}(Y)\})\]
+On en déduit que:
+\[ \mathbb{P}(A_1)=\sum_{x,y} \mathbb{P}(F_{0,{n_0}k}(x)=F_{0,{n_0}k}(y))\mathbb{P}(X=x,Y=y)\]
+Comme on a supposé que 
+\[\inf_{x,y}\mathbb{P}(F_{0,{n_0}k}(x)=F_{0,{n_0}k}(y))\geq\varepsilon>0,\]
+\[ \mathbb{P}(A_1)\geq\sum_{x,y} \varepsilon\mathbb{P}(X=x,Y=y)\geq\varepsilon\sum_{x,y}\mathbb{P}(X=x,Y=y)\geq\varepsilon\]
+Ainsi,
+\[ \mathbb{P}(A_1)\geq\varepsilon\]
+\\
+Montrons par récurrence sur $l$ que:
+\[ \mathbb{P}(S>l)=\mathbb{P}({A_1}^c,{A_2}^c,...,{A_l}^c)\le(1-\varepsilon)^l. \]
+Le résultat au rang $1$ se déduit du point précédent.
+Soit $l\geq1$, supposons le résultat au rang $l$. Alors
+\begin{equation*}
+\begin{split}
+\mathbb{P}(S>l+1)&=\mathbb{P}({A_1}^c,{A_2}^c,...,{A_l}^c,{A_{l+1}}^c)\\
+&=\sum_{x,y} \mathbb{P}(F_{0,n_0}(x)\neq F_{0,n_0}(y),...,F_{0,{n_0}(l+1)}(x)\neq F_{0,{n_0}(l+1)}(y))\mathbb{P}(X=x,Y=y)\\
+%\begin{multline*}
+&=\sum_{x,y} \mathbb{P}(F_{n_0l,n_0(l+1)}(F_{0,{n_0}l}(x))\neq F_{n_0l,n_0(l+1)}(F_{0,{n_0}l}(y))) \\
+&\hspace{1cm}\times\mathbb{P}(F_{0,n_0}(x)\neq F_{0,n_0}(y),...,F_{0,{n_0}l}(x)\neq F_{0,{n_0}l}(y))\mathbb{P}(X=x,Y=y)\\
+%\end{multline*}
+&\leq (1-\varepsilon)\mathbb{P}(S>l)\\
+&\leq (1-\varepsilon)^{(l+1)}
+\end{split}
+\end{equation*}
+D'où le résultat par récurrence.
+On en déduit:
+\[\mathbb{E}[S]=\sum_{l\geq0}\mathbb{P}(S>l)\leq\sum_{l\geq0}(1-\varepsilon)^l\]
+Donc on trouve:
+\[\mathbb{E}[S]\leq\frac{1}{\varepsilon}\]
+\\
+Comme $(\mathbb{P}(F_{0,n}(X)=F_{0,n}(Y)))_n\in \mathbb{N}$ est une suite croissante sur $n$.\\
+Or, on a pour tout $n\geq 1$, $\mathbb{P}(F_{0,nn_0}(X)=F_{0,nn_0}(Y))\geq\mathbb{P}(S\leq n)$.\\
+Ainsi,
+\[1-(1-\epsilon)^n\leq\mathbb{P}(F_{0,nn_0}(X)=F_{0,nn_0}(Y))\leq1\]
+D'après le théorème d'encadrement et la monotonie de la suite, on a:
+\[\lim\limits_{n \rightarrow +\infty} \mathbb{P}(F_{0,n}(X)=F_{0,n}(Y)) = 1\]
+
+\paragraph{T3.}
+Supposons que $\pi$ et $\nu$ sont deux probabilités invariantes. 
+Alors pour tout $n\geq0$, $F_{0,n}(X)$ suit la même loi que $X$, ainsi que $Y$.
+Soit $\varphi$ une fonction continue bornée,
+\[\mathbb{E}(\varphi(X-Y))=\mathbb{E}(\varphi(F_{0,n}(X)-F_{0,n}(Y)))\]
+$\varphi(F_{0,n}(X)-F_{0,n}(Y))$ converge en probabilité(d'après la question $T2$), donc en loi vers $0$.
+D'où:
+\[\mathbb{E}(\varphi(X-Y))=\lim \limits_{n \rightarrow +\infty}\mathbb{E}(\varphi(F_{0,n}(X)-F_{0,n}(Y)))=0\]
+Donc $X$ et $Y$ suivent la même loi, i.e. $\pi = \nu$.
+Ainsi il existe au plus une seulement probabilité invariante.
+
+\end{document}
