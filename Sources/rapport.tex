@@ -68,7 +68,7 @@ En utilisant que $\pi^{bin}(x)  = \binom{M}{x}p^x(1-p)^{M-x}$, il vient dans les
 
 	\begin{itemize}
 		\item 	Si $(x,y) = (k,k+1)$
-			\begin{equation}	
+			\begin{equation*}	
 			\begin{split}
 			\pi^{bin}(k)P(k,k+1) &= \binom{M}{k}p^k(1-p)^{M-k}p\frac{M-k}{M} \\
 			&= \frac{M-k}{M}\binom{M}{M-k}p^{k+1}(1-p)^{M-k-1}(1-p)\\
@@ -77,17 +77,30 @@ En utilisant que $\pi^{bin}(x)  = \binom{M}{x}p^x(1-p)^{M-x}$, il vient dans les
 			&= \frac{k+1}{M}\binom{M}{k+1}p^{k+1}(1-p)^{M-k-1}(1-p)\\
 			&= \pi^{bin}(k+1)P(k+1,k) 
 			\end{split}
-			\end{equation}
+			\end{equation*}
 		\item   Si $(x,y) = (k,k)$, L'équation est trivialement vérifiée
 		\item   Sinon, les deux memmbres sont nuls.
 	\end{itemize}
 		Finalement, pour tout $x,y \in \E^{bin}$, 
 \begin{center}
 \fbox{\begin{minipage}{0.5\textwidth}
-\[\pi^{bin}(k)P(k,k+1) = \pi^{bin}(k+1)P(k+1,k) \]
+\[\pi^{bin}(x)P(x,y) = \pi^{bin}(y)P(y,x) \]
 \end{minipage}}
 \end{center}
 
+\item[\textbullet]
+Soit $X$ une variable aléatoire de loi $\pi^{bin}$. Alors, pour $x\in \E$,
+\begin{equation*}
+\begin{split}
+ \P(F^{bin}(X)=x) &= \sum_{y\in\E}{\pi^{bin}(y)P^{bin}(y,x)}
+		  = \sum_{y\in\E}{\pi^{bin}(x)P^{bin}(x,y)}\\
+		  &= \pi^{bin}(x)P\sum_{y\in\E}{^{bin}(x,y)}
+		  = \pi^{bin}(x)\\
+		  &= \P(X=x) 
+\end{split}
+\end{equation*}
+De cela, on déduit que $\pi^{bin}$ est invariante pour $F^{bin}$.
 \end{itemize}
+
 \end{document}
 
