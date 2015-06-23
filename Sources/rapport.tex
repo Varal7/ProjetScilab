@@ -50,18 +50,43 @@ Il vient donc, \underline{pour $k \in \E^{bin}$},
 \end{minipage}}
 \end{center}
 
+\vspace{5mm}
 Enfin, \underline{pour $x,y \in \E^{bin}$, si $|x-y|>1$},
 \begin{center}
 \fbox{\begin{minipage}{0.5\textwidth}
 \[P^{bin}(x,y) = 0\]
 \end{minipage}}
 \end{center}
+\vspace{5mm}
 
 
 
-
-\item
+\item[\textbullet]
 Soit $x,y \in \E^{bin}$.
+
+En utilisant que $\pi^{bin}(x)  = \binom{M}{x}p^x(1-p)^{M-x}$, il vient dans les différents cas :
+
+	\begin{itemize}
+		\item 	Si $(x,y) = (k,k+1)$
+			\begin{equation}	
+			\begin{split}
+			\pi^{bin}(k)P(k,k+1) &= \binom{M}{k}p^k(1-p)^{M-k}p\frac{M-k}{M} \\
+			&= \frac{M-k}{M}\binom{M}{M-k}p^{k+1}(1-p)^{M-k-1}(1-p)\\
+			&= \binom{M-1}{M-k-1}p^{k+1}(1-p)^{M-k-1}(1-p)\\
+			&= \binom{M-1}{k}p^{k+1}(1-p)^{M-k-1}(1-p)\\
+			&= \frac{k+1}{M}\binom{M}{k+1}p^{k+1}(1-p)^{M-k-1}(1-p)\\
+			&= \pi^{bin}(k+1)P(k+1,k) 
+			\end{split}
+			\end{equation}
+		\item   Si $(x,y) = (k,k)$, L'équation est trivialement vérifiée
+		\item   Sinon, les deux memmbres sont nuls.
+	\end{itemize}
+		Finalement, pour tout $x,y \in \E^{bin}$, 
+\begin{center}
+\fbox{\begin{minipage}{0.5\textwidth}
+\[\pi^{bin}(k)P(k,k+1) = \pi^{bin}(k+1)P(k+1,k) \]
+\end{minipage}}
+\end{center}
 
 \end{itemize}
 \end{document}
