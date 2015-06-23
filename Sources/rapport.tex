@@ -1,0 +1,68 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{textcomp}
+\usepackage{amsmath,amssymb}
+\usepackage[coverpage,fancysections]{polytechnique}
+
+\def \P{\mathbb{P}}
+\def \E{\mathcal{E}}
+
+\title{Retour vers le futur}
+\author{Sun Qi et Victor Quach}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection*{T1}
+
+\begin{itemize}
+\item[\textbullet]
+Soit $k \in \E^{bin}=\{0, \dots, M\}$. 
+
+Compte-tenu, de la définition de $F^{bin}$, on a \underline{pour $k<M$} :
+
+
+\begin{center}
+\fbox{\begin{minipage}{0.5\textwidth}
+\[P^{bin}(k,k+1) = p\frac{M-k}{M}\]
+\end{minipage}}
+\end{center}
+
+Notons que le membre de droite est nul pour $k=M$.\\
+
+
+De même, \underline{pour $k>0$} : 
+\begin{center}
+\fbox{\begin{minipage}{0.5\textwidth}
+\[P^{bin}(k,k-1) = (1-p)\frac{k}{M}\]
+\end{minipage}}
+\end{center}
+Le membre de droite est nul pour $k=0$.\\
+
+
+Il vient donc, \underline{pour $k \in \E^{bin}$},
+\begin{center}
+\fbox{\begin{minipage}{0.5\textwidth}
+\[P^{bin}(k,k) = 1 - p +\frac{2kp}{M}+\frac{k}{M}\]
+\end{minipage}}
+\end{center}
+
+Enfin, \underline{pour $x,y \in \E^{bin}$, si $|x-y|>1$},
+\begin{center}
+\fbox{\begin{minipage}{0.5\textwidth}
+\[P^{bin}(x,y) = 0\]
+\end{minipage}}
+\end{center}
+
+
+
+
+\item
+Soit $x,y \in \E^{bin}$.
+
+\end{itemize}
+\end{document}
+
