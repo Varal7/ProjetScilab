@@ -1,0 +1,5 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Coalescence et loi invariante}{2}
+\contentsline {paragraph}{T2.}{2}
+\contentsline {paragraph}{T3.}{3}
+\contentsline {paragraph}{T4.}{3}

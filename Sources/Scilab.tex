@@ -74,4 +74,21 @@ D'où:
 Donc $X$ et $Y$ suivent la même loi, i.e. $\pi = \nu$.
 Ainsi il existe au plus une seulement probabilité invariante.
 
+\paragraph{T4.}
+Soient $x,y \in \E$, on peut montrer par récurrence (de même que dans la question $T2.$) que:
+\[\forall l\geq 0, \P({T_+}^{x,y}>n_0l)=\P(F_{0,n_0l}(x)\ne F_{0,n_0l}(y))\leq (1-\epsilon)^l\]
+De plus, $(P({T_+}^{x,y}>n)_{n \in \mathbb{N}}$ est une suite décroissante, on a:
+\[\forall l, \forall n, n_0l\leq n \leq n_0(l+1) \Rightarrow P({T_+}^{x,y}>n) \leq (1-\epsilon)^l \]
+On en déduit que:
+\begin{equation*}
+\begin{split}
+\mathbb{E}[T_+] &=max_{x,y \in \E} \mathbb{E}[T_+^{x,y}] \\
+&\leq \binom{\# \E}{2} n_0 \sum_{l\geq 0} (1-\epsilon)^l \\
+&\leq \binom{\# \E}{2} \frac{n_0}{\epsilon}
+\end{split}
+\end{equation*}
+\underline{Ainsi, $\mathbb{E}[T_+]$ est borné par $\binom{\# \E}{2} \frac{n_0}{\epsilon}$.}
+
+
+
 \end{document}
