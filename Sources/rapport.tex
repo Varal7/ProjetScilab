@@ -11,7 +11,7 @@
 \def \esp{\mathbb{E}}
 
 \title{Retour vers le futur}
-\author{Sun Qi et Victor Quach}
+\author{Qi \textsc{Sun} et Victor \textsc{Quach}}
 \date{}
 
 \begin{document}
@@ -181,22 +181,33 @@ $\varphi(F_{0,n}(X)-F_{0,n}(Y))$ converge en probabilité(d'après la question $
 D'où:
 \[\mathbb{E}(\varphi(X-Y))=\lim \limits_{n \rightarrow +\infty}\mathbb{E}(\varphi(F_{0,n}(X)-F_{0,n}(Y)))=0\]
 Donc $X$ et $Y$ suivent la même loi, i.e. $\pi = \nu$.
-Ainsi il existe au plus une probabilité invariante.
+\underline{Ainsi, il existe au plus une probabilité invariante}.
 
 \subsection*{T4}
-Soient $x,y \in \E$, on peut montrer par récurrence (de même que dans la question $T2.$) que:
-\[\forall l\geq 0, \P({T_+}^{x,y}>n_0l)=\P(F_{0,n_0l}(x)\ne F_{0,n_0l}(y))\leq (1-\epsilon)^l\]
-De plus, $(P({T_+}^{x,y}>n)_{n \in \mathbb{N}}$ est une suite décroissante, on a:
-\[\forall l, \forall n, n_0l\leq n \leq n_0(l+1) \Rightarrow P({T_+}^{x,y}>n) \leq (1-\epsilon)^l \]
-On en déduit que:
+Soient $x,y \in \E$.
+
+On peut montrer par récurrence (de même que dans la question \textbf{T2.}) que:
+
+\[\forall l\geq 0, \quad \P(T_+^{x,y}>n_0l)=\P(F_{0,n_0l}(x)\ne F_{0,n_0l}(y))\leq (1-\varepsilon)^l\]
+Par ailleurs, $(P(T_+^{x,y}>n)_{n \in \mathbb{N}}$ est une suite décroissante, d'où :
+\[\forall l, \forall n, \quad n_0l\leq n \leq n_0(l+1) \Rightarrow \P(T_+^{x,y}>n) \leq (1-\varepsilon)^l \]
+
+
+D'où : 
+\[ \esp[T_+^{x,y}]  = \sum_{n\geq 0} \P(T_+^{x,y}>n) \le  \sum_{n\geq 0} (1-\varepsilon)^{\left\lfloor\frac{n}{n_0}\right\rfloor} = \frac{n_0}{\varepsilon} \] 
+Les variables aléatoires $T_+^{x,y}$ étant positives, on a :
+
+\[ T_+ = \max_{x,y} \le T_+^{x,y} \\le \sum_{x,y} T_+^{x,y} \] 
+
+D'ou l'on déduit que:
 \begin{equation*}
 \begin{split}
-\mathbb{E}[T_+] &=max_{x,y \in \E} \mathbb{E}[T_+^{x,y}] \\
-&\leq \binom{\# \E}{2} n_0 \sum_{l\geq 0} (1-\epsilon)^l \\
-&\leq \binom{\# \E}{2} \frac{n_0}{\epsilon}
+\mathbb{E}[T_+] & \le \esp[\sum_{x,y} T_+^{x,y}] \\
+		& \le \sum_{x,y} \esp[T_+^{x,y}]  \\
+		& \le \binom{\# \E}{2} \frac{n_0}{\varepsilon} 
 \end{split}
 \end{equation*}
-\underline{Ainsi, $\mathbb{E}[T_+]$ est borné par $\binom{\# \E}{2} \frac{n_0}{\epsilon}$.}
+\underline{Ainsi, $\E[T_+]$ est fini et borné par $\binom{\# \E}{2} \frac{n_0}{\epsilon}$.}
 
 \subsection{T5}
 Montrons par récurrence que $F_{0,n}(x) \sim F_{-n,0}(x)$ pour tout $x \in \E$ et $n \in \mathbb{N}$:
