@@ -198,5 +198,52 @@ On en déduit que:
 \end{equation*}
 \underline{Ainsi, $\mathbb{E}[T_+]$ est borné par $\binom{\# \E}{2} \frac{n_0}{\epsilon}$.}
 
+\subsection{T5}
+Montrons par récurrence que $F_{0,n}(x) \sim F_{-n,0}(x)$ pour tout $x \in \E$ et $n \in \mathbb{N}$:
+Soit $x \in \E$, $n=0$, on a directement:
+\[\P(F_{0,0}(x)=F_{-0,0}(x)\]
+Soit $n \geq 0$, supposons le résultat au rang $n$, alors soient $x,y \in \E$,
+\begin{equation*}
+\begin{split}
+\P(F_{-n+1,0}(x)=y)&=\P(F_0(F_{-(n+1),-1}(x))=y)\\
+&=\sum_{z \in \E} \P(F_0(z)=y)\P(F_{-(n+1),-1}(x)=z)\\
+&=\sum_{z \in \E} \P(F_{(n+1)}(z)=y)\P(F_{0,n}(x)=z)\\ %(d'après l'hypothèse de la récurrence)
+&=\P(F_{(n+1)}(F_{0,n}(x))=y)\\
+&=\P(F_{0,(n+1)}(x)=y)
+\end{split}
+\end{equation*}
+Ainsi, $F_{-(n+1),0}(x) \sim F_{0,n+1}(x)$.
+D'où le résultat par récurrence sur $n$.\\
+\\
+Soit $n \in \mathbb{N}$,
+\begin{equation*}
+\begin{split}
+\P(T_{+}\leq n)&=\sum_{z \in \E} \prod_{x \in \E} \P(F_{n,0}(x)=z)\\
+&=\sum_{z \in \E} \prod_{x \in \E} \P(F_{0,-n}(x)=z)\\
+&=\P(T_{-}\leq n)
+\end{split}
+\end{equation*}
+$T_+$ et $T_-$ ont donc la même fonction de répartition.
+\underline{Ainsi, $T_+ \sim T_-$.}\\
+\\
+Soient $x \in \E$ et $n \geq T_-$,
+\[F_{-n,0}(x)=F_{-T_-,0}(F_{-n,-T_-}(x))=F_{-T_-,0}(x)\]\\
+Supposons que $X^*$ suit la loi $\nu$, alors soit $x \in \E$:
+\begin{equation*}
+\begin{split}
+\P(F_{-(T_- +1),0}(x_0)=x)&=\P(F_0(F_{-T_-,0}(x_0))=x)\\
+&=\sum_{y \in \E}\P(F_{-T_-,0}(x_0)=y)\P(F_0(y)=x)\\
+&=\sum_{y \in \E}\nu(y)\P(F_0(y)=x)
+\end{split}
+\end{equation*}
+Or, $\P(F_{-(T_- +1),0}(x_0)=x)=\P(F_{-T_-,0}(x_0)=x)=\nu(x)$ d'après le point précédent.
+$\nu$ est donc une loi invariante. D'après l'unicité de probabilité invariante montrée dans la question T3, on a:
+
+\begin{center}
+\fbox{\begin{minipage}{0.5\textwidth}
+\[X^* \sim \pi\] 
+\end{minipage}}
+\end{center}
+
 \end{document}
 
