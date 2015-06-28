@@ -248,16 +248,19 @@ $T_+$ et $T_-$ ont donc la même fonction de répartition.
 \item[\textbullet]
 Soient $x \in \E$ et $n \geq T_-$,
 \[\underline{F_{-n,0}(x)}=F_{-T_-,0}(F_{-n,-T_-}(x))=\underline{F_{-T_-,0}(x)}\]\\
-Supposons que $X^*$ suit la loi $\nu$, alors soit $x \in \E$:
+Soit $x \in \E$:
 \begin{equation*}
 \begin{split}
-\P(F_{-(T_- +1),0}(x_0)=x)&=\P(F_0(F_{-T_-,0}(x_0))=x)\\
-&=\sum_{y \in \E}\P(F_{-T_-,0}(x_0)=y)\P(F_0(y)=x)\\
-&=\sum_{y \in \E}\nu(y)\P(F_0(y)=x)
+\P(F(X^*) = x) &= \P(F\circ F_{-T,0}(x_0) = x) \\
+	      &= \sum_{y \in \E}\P(F_{-T_-,0}(x_0)=y)\P(F(y)=x)\\
+	      &= \sum_{y \in \E}\P(F_{0,T_-}(x_0)=y)\P(F_{T_-+1}(y)=x)\\
+	      &= \P(F_{0,T_-+1}(x_0)=x)\\
+	      &= \P(F_{-(T_-+1),0}(x_0)=x)\\
+	      &= \P(F_{-T_-,0}(x_0)=x)\\
+	      &= \P(X^*=x)
 \end{split}
 \end{equation*}
-Or, $\P(F_{-(T_- +1),0}(x_0)=x)=\P(F_{-T_-,0}(x_0)=x)=\nu(x)$ d'après le point précédent.
-$\nu$ est donc une loi invariante. D'après l'unicité de probabilité invariante montrée dans la question T3, on a:
+La loi de $X^*$ est donc invariante par $F$. D'après l'unicité de probabilité invariante montrée dans la question T3, on a:
 
 \begin{center}
 \fbox{\begin{minipage}{0.5\textwidth}
@@ -318,6 +321,8 @@ D'où:
 \[\esp[T_-]\leq \frac{n_0}{\varepsilon}\] 
 \end{minipage}}
 \end{center}
+
+
 
 \end{document}
 
