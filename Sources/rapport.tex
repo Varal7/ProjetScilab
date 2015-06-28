@@ -322,8 +322,14 @@ D'où:
 \end{minipage}}
 \end{center}
 
+\subsection*{T9}
+L'algorithme procède au calcul d'une instance de $X^*$, dont la loi est $\pi$. 
 
+Il s'agit d'une part d'évaluer $T_-$, puis de retourner $F_{-T_-,0}(x_0$, pour un $x_0$ quelconque. Ici, on se contente de minorer $T_-$ par $kN_0$ et on choisit $x_0 = \hat{0}$, ce qui est justifié car $kN_0 \ge T_- \Rightarrow F_{-kN_0,0}(x_0) = F_{-T_-,0}(x_0)$ et cette valeur est indépendante du $x_0$ choisi.
 
+Il est important de réutiliser les instances de $F$ générées dans les itérations précédentes, sinon on se retrouve à sélectionner une suite d'instances de $F$ avec un $T_-$ moins élevé qui, d'autre part, n'assure plus que le résultat renvoyé suive la loi $\pi$.
+
+On choisit de doubler $N$ à chaque itération plutôt que de l'incrémenter de 1 simplement pour diminuer le temps de calcul : dans l'algorithme proposé, on choisit de ne calculer qu'une trajectoire pour $N-1$ trajectoires que l'on ne calcule pas. Cela ne permet pas de trouver explicitement $T$ mais suffit pour renvoyer une instance de $X^*$.
 \end{document}
 
 
