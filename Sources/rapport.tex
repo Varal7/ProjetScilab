@@ -4,7 +4,7 @@
 \usepackage[french]{babel}
 \usepackage{textcomp}
 \usepackage{amsmath,amssymb}
-\usepackage[coverpage,fancysections]{polytechnique}
+%\usepackage[coverpage,fancysections]{polytechnique}
 
 \def \P{\mathbb{P}}
 \def \E{\mathcal{E}}
@@ -16,6 +16,8 @@
 
 \begin{document}
 \maketitle
+
+\section{Coalescence et loi invariante}
 
 \subsection*{T1}
 
@@ -109,6 +111,9 @@ De cela, on déduit que $\pi^{bin}$ est invariante pour $F^{bin}$.
 \end{itemize}
 
 \subsection*{T2}
+\begin{itemize}
+
+\item[\textbullet]
 Il s'agit de calculer :
 \begin{equation*}
 \begin{split}
@@ -127,6 +132,7 @@ Ainsi,
 \end{minipage}}
 \end{center}
 
+\item[\textbullet]
 Montrons par récurrence sur $l$ que:
 \begin{center}
 \fbox{\begin{minipage}{0.5\textwidth}
@@ -158,7 +164,7 @@ Finalement :
 \end{minipage}}
 \end{center}
 
-
+\item[\textbullet]
 D'une part, $(\mathbb{P}(F_{0,n}(X)=F_{0,n}(Y)))_n\in \mathbb{N}$ est une suite croissante sur $n$.\\
 D'autre part, pour tout $n\geq 1$, $\mathbb{P}(F_{0,nn_0}(X)=F_{0,nn_0}(Y))\geq\mathbb{P}(S\leq n)$.\\
 Ainsi,
@@ -171,6 +177,7 @@ D'après le théorème d'encadrement et la monotonie de la suite, il vient :
 \end{minipage}}
 \end{center}
 
+\end{itemize}
 
 \subsection*{T3}
 Supposons que $\pi$ et $\nu$ sont deux probabilités invariantes. 
@@ -185,21 +192,17 @@ Donc $X$ et $Y$ suivent la même loi, i.e. $\pi = \nu$.
 
 \subsection*{T4}
 Soient $x,y \in \E$.
-
 On peut montrer par récurrence (de même que dans la question \textbf{T2.}) que:
 
 \[\forall l\geq 0, \quad \P(T_+^{x,y}>n_0l)=\P(F_{0,n_0l}(x)\ne F_{0,n_0l}(y))\leq (1-\varepsilon)^l\]
 Par ailleurs, $(P(T_+^{x,y}>n)_{n \in \mathbb{N}}$ est une suite décroissante, d'où :
 \[\forall l, \forall n, \quad n_0l\leq n \leq n_0(l+1) \Rightarrow \P(T_+^{x,y}>n) \leq (1-\varepsilon)^l \]
-
-
-D'où : 
+Ainsi: 
 \[ \esp[T_+^{x,y}]  = \sum_{n\geq 0} \P(T_+^{x,y}>n) \le  \sum_{n\geq 0} (1-\varepsilon)^{\left\lfloor\frac{n}{n_0}\right\rfloor} = \frac{n_0}{\varepsilon} \] 
 Les variables aléatoires $T_+^{x,y}$ étant positives, on a :
 
 \[ T_+ = \max_{x,y}  T_+^{x,y} \le \sum_{x,y} T_+^{x,y} \] 
-
-D'ou l'on déduit que:
+D'où l'on déduit que:
 \begin{equation*}
 \begin{split}
 \mathbb{E}[T_+] & \le \esp[\sum_{x,y} T_+^{x,y}] \\
@@ -210,6 +213,9 @@ D'ou l'on déduit que:
 \underline{Ainsi, $\E[T_+]$ est fini et borné par $\binom{\# \E}{2} \frac{n_0}{\epsilon}$.}
 
 \subsection*{T5}
+\begin{itemize}
+
+\item[\textbullet]
 Montrons par récurrence que $F_{0,n}(x) \sim F_{-n,0}(x)$ pour tout $x \in \E$ et $n \in \mathbb{N}$:
 
 Soit $x \in \E$, $n=0$, on a directement:
@@ -227,6 +233,7 @@ Soit $n \geq 0$, supposons le résultat au rang $n$, alors soient $x,y \in \E$,
 Ainsi, $F_{-(n+1),0}(x) \sim F_{0,n+1}(x)$.
 D'où le résultat par récurrence sur $n$.\\
 \\
+\item[\textbullet]
 Soit $n \in \mathbb{N}$,
 \begin{equation*}
 \begin{split}
@@ -238,6 +245,7 @@ Soit $n \in \mathbb{N}$,
 $T_+$ et $T_-$ ont donc la même fonction de répartition.
 \underline{Ainsi, $T_+ \sim T_-$.}\\
 \\
+\item[\textbullet]
 Soient $x \in \E$ et $n \geq T_-$,
 \[\underline{F_{-n,0}(x)}=F_{-T_-,0}(F_{-n,-T_-}(x))=\underline{F_{-T_-,0}(x)}\]\\
 Supposons que $X^*$ suit la loi $\nu$, alors soit $x \in \E$:
@@ -257,6 +265,9 @@ $\nu$ est donc une loi invariante. D'après l'unicité de probabilité invariant
 \end{minipage}}
 \end{center}
 
+\end{itemize}
+
+\section{Couplage monotone}
 
 \subsection*{T6}
 
@@ -284,6 +295,27 @@ Soit $x,y \in \E^{bin}$, avec $x\le y$. Si $x=y$, le résultat est assuré. Supp
 Finalement,
 \begin{center}
  \underline{$F^{bin}$ est croissante sur  $(\E^{bin},\le)$.}
+\end{center}
+
+\subsection{T7}
+Supposons que $F$ est croissante, alors $\forall n \in \mathbb{N}$, $F_{-n,0}$ est croissante.
+Donc $\forall x,y \in \E, F_{-n,0}(x)=F_{-n,0}(y) \iff F_{-n,0}(\hat{0})=F_{-n,0}(\hat{1})$.\\
+On en déduit:
+\begin{center}
+\fbox{\begin{minipage}{0.5\textwidth}
+\[T_-=\inf\{n\geq 0: F_{-n,0}(\hat{0})=F_{-n,0}(\hat{1})\}\] 
+\end{minipage}}
+\end{center}
+
+\subsection{T8}
+Comme on a montré que $T_+ \sim T_-$ dans la question $5$, estimer $\mathbb{E}[T_-]$ revient à trouver une estimation de $\mathbb{E}[T_+]$, avec $T_+=\inf{n\geq 0: F_{0,n}(\hat{0})=F_{0,n}(\hat{1})}$.\\
+Ainsi, d'après la question 4, on a:
+\[\esp[T_+]=\esp[T_+^{\hat{0},\hat{1}}]\leq \frac{n_0}{\epsilon}\] 
+D'où:
+\begin{center}
+\fbox{\begin{minipage}{0.5\textwidth}
+\[\esp[T_-]\leq \frac{n_0}{\epsilon}\] 
+\end{minipage}}
 \end{center}
 
 \end{document}
