@@ -1,7 +1,7 @@
 clear;
 
-M=20;
-p=0.8;
+M=10;
+p=0.7;
 
 
 nb_lancers = 5000;
@@ -49,6 +49,5 @@ endfunction
 for i=1 : nb_lancers
     results(i)=Xstar();
 end
-histplot(100,results,style=2)
-binom = grand(1,nb_lancers,"bin",M,p);
-histplot(100,binom,style=5)
+histplot(0.5:10.5,results,style=2)
+

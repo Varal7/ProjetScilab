@@ -18,10 +18,10 @@ function y=F(x,K,U)
 endfunction
 
 
-function r=Xstarstar()
+function r=Xstarstar()//Renvoie un instance de X**
     has_coalescence = %F
     n = 0 //compteur n
-    X = zeros(1,M)//On réserve la M+1e colonne pour indexation
+    X = zeros(1,M)
     X(1,1:M) = [1:M];
     while ~has_coalescence    
          n= n+1
@@ -35,7 +35,9 @@ function r=Xstarstar()
              end
          end
     end
-    T=n
+    //Si on est sorti, c'est qu'il y a coalescence de toutes
+    //les trajectoires. D'où T_+ = n. On peut renvoyer r.
+    T=n 
     r = X(T+1,1)
 endfunction
 
@@ -45,6 +47,6 @@ endfunction
 for i=1 : nb_lancers
     results(i)=Xstarstar();
 end
-histplot(100,results,style=2)
-binom = grand(1,nb_lancers,"bin",M,p);
-histplot(100,binom,style=5)
+histplot(0.5:10.5,results,style=2)
+//binom = grand(1,nb_lancers,"bin",M,p);
+//histplot(100,binom,style=5)

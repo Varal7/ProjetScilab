@@ -5,6 +5,9 @@
 \usepackage{textcomp}
 \usepackage{amsmath,amssymb}
 \usepackage[coverpage,fancysections]{polytechnique}
+%\usepackage[fancysections]{polytechnique}
+\usepackage{graphicx}
+
 
 \def \P{\mathbb{P}}
 \def \E{\mathcal{E}}
@@ -17,7 +20,6 @@
 \begin{document}
 \maketitle
 
-\section{Coalescence et loi invariante}
 
 \subsection*{T1}
 
@@ -109,6 +111,29 @@ De cela, on déduit que $\pi^{bin}$ est invariante pour $F^{bin}$.
 \end{center}
 
 \end{itemize}
+
+
+\subsection*{S1}
+En faisant varier les paramètres de la simulation ($p$, $M$, $n$), on obtient toujours le résultat représenté à la \textsc{figure} \ref{S1} : $X_n = F^{bin}_{n,0}$ suit la loi binomiale $\text{Bin}(M,p)$.
+\begin{figure}[h]
+\center
+\includegraphics[width=11cm]{S1}
+\caption{Histogramme de $X_{15}$ pour $p=0.7$, $M=10$, 5000 lancers}
+\label{S1}
+
+\end{figure}
+
+\section{Coalescence et loi invariante}
+\subsection*{S2}
+On représente $n$ sur l'axe des abscisses et $F_n^{bin}(x)$ sur l'axe des ordonnés pour trois trajectoires rouge, bleue et rose. Sur la \textsc{figure} \ref{S2}, rose et bleu coalescent à la 28\ieme{} itération, puis avec rouge à la 36\ieme{}.
+\begin{figure}[h]
+\center
+\includegraphics[width=15cm]{S2}
+\caption{Coalescence de trois trajectoires du système dynamique $F^{bin}$}
+\label{S2}
+
+\end{figure}
+
 
 \subsection*{T2}
 \begin{itemize}
@@ -270,6 +295,17 @@ La loi de $X^*$ est donc invariante par $F$. D'après l'unicité de probabilité
 
 \end{itemize}
 
+\subsection*{S3}
+Contrairement à ce que l'on espérait la simulation aboutit à un histogramme qui ressemble méchammenet à celui d'une loi binomiale $\text{Bin}(M,p)$.
+\begin{figure}[h]
+\center
+\includegraphics[width=11cm]{S3}
+\caption{Histogramme de $X^{++}$ pour $p=0.7$, $M=10$, 5000 lancers}
+\label{S3}
+
+\end{figure}
+
+
 \section{Couplage monotone}
 
 \subsection*{T6}
@@ -330,6 +366,14 @@ Il s'agit d'une part d'évaluer $T_-$, puis de retourner $F_{-T_-,0}(x_0$, pour 
 Il est important de réutiliser les instances de $F$ générées dans les itérations précédentes, sinon on se retrouve à sélectionner une suite d'instances de $F$ avec un $T_-$ moins élevé qui, d'autre part, n'assure plus que le résultat renvoyé suive la loi $\pi$.
 
 On choisit de doubler $N$ à chaque itération plutôt que de l'incrémenter de 1 simplement pour diminuer le temps de calcul : dans l'algorithme proposé, on choisit de ne calculer qu'une trajectoire pour $N-1$ trajectoires que l'on ne calcule pas. Cela ne permet pas de trouver explicitement $T$ mais suffit pour renvoyer une instance de $X^*$.
+
+\subsection*{S4}
+En faisant varier les paramètres $M$ et $p$, on constate que $X^{*}$ suit la loi binomiale $\text{Bin}(M,p)$, comme on le voit sur la \textsc{figure} \ref{S4}. 
+\begin{figure}[h]
+\center
+\includegraphics[width=11cm]{S4}
+\caption{Histogramme de $X^{*}$ pour $p=0.7$, $M=10$, 5000 lancers}
+\label{S4}
+\end{figure}
+
 \end{document}
-
-
