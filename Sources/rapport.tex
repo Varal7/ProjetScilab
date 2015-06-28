@@ -257,5 +257,34 @@ $\nu$ est donc une loi invariante. D'après l'unicité de probabilité invariant
 \end{minipage}}
 \end{center}
 
+
+\subsection*{T6}
+
+Il s'agit de montrer que $F^{bin}$ est croissante sur $(\E^{bin},\le)$.
+
+Soit $x,y \in \E^{bin}$, avec $x\le y$. Si $x=y$, le résultat est assuré. Supposons $x<y$. On distingue les cas selon les valeurs de $K$ et $U$. 
+
+\begin{itemize}
+\item[\textbullet] Si $U>p$
+	\begin{itemize}
+	\item Si $x<y<K$, $F^{bin}(x) = x < y = F^{bin}(y)$
+	\item Si $x<K\le y$, $F^{bin}(x) = x \le y-1 = F^{bin}(y)$
+	\item Si $K\le x < y$, $F^{bin}(x) = x - 1 < y - 1 = F^{bin}(y)$
+	\end{itemize}
+\item[\textbullet] Sinon, $U\le p$.
+	\begin{itemize}
+	\item Si $x<y<K$, $F^{bin}(x) = x + 1 < y + 1= F^{bin}(y)$
+	\item Si $x<K\le y$, $F^{bin}(x) = x +1 \le y = F^{bin}(y)$
+	\item Si $K\le x < y$, $F^{bin}(x) = x < y = F^{bin}(y)$
+	\end{itemize}
+\end{itemize}
+\vspace{0.5cm}
+
+Finalement,
+\begin{center}
+ \underline{$F^{bin}$ est croissante sur  $(\E^{bin},\le)$.}
+\end{center}
+
 \end{document}
+
 
