@@ -1,4 +1,4 @@
-clear
+clear;
 
 M=10;
 p=0.7;
@@ -21,7 +21,7 @@ endfunction
 function r=Xstarstar()
     has_coalescence = %F
     n = 0 //compteur n
-    X = zeros(1,M+1)//On réserve la M+1e colonne pour indexation
+    X = zeros(1,M)//On réserve la M+1e colonne pour indexation
     X(1,1:M) = [1:M];
     while ~has_coalescence    
          n= n+1
@@ -36,7 +36,6 @@ function r=Xstarstar()
          end
     end
     T=n
-    X(1:T+1,M+1)= [0:T]';
     r = X(T+1,1)
 endfunction
 
