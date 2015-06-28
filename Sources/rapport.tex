@@ -209,18 +209,19 @@ D'ou l'on déduit que:
 \end{equation*}
 \underline{Ainsi, $\E[T_+]$ est fini et borné par $\binom{\# \E}{2} \frac{n_0}{\epsilon}$.}
 
-\subsection{T5}
+\subsection*{T5}
 Montrons par récurrence que $F_{0,n}(x) \sim F_{-n,0}(x)$ pour tout $x \in \E$ et $n \in \mathbb{N}$:
+
 Soit $x \in \E$, $n=0$, on a directement:
-\[\P(F_{0,0}(x)=F_{-0,0}(x)\]
+\[F_{0,0}(x)=F_{-0,0}(x)\]
 Soit $n \geq 0$, supposons le résultat au rang $n$, alors soient $x,y \in \E$,
 \begin{equation*}
 \begin{split}
-\P(F_{-n+1,0}(x)=y)&=\P(F_0(F_{-(n+1),-1}(x))=y)\\
+\P(F_{-(n+1),0}(x)=y)&=\P(F_0\circ F_{-(n+1),-1}(x)=y)\\
 &=\sum_{z \in \E} \P(F_0(z)=y)\P(F_{-(n+1),-1}(x)=z)\\
-&=\sum_{z \in \E} \P(F_{(n+1)}(z)=y)\P(F_{0,n}(x)=z)\\ %(d'après l'hypothèse de la récurrence)
-&=\P(F_{(n+1)}(F_{0,n}(x))=y)\\
-&=\P(F_{0,(n+1)}(x)=y)
+&=\sum_{z \in \E} \P(F_{n+1}(z)=y)\P(F_{0,n}(x)=z) \quad\quad\text{(d'après H.R.)}\\
+&=\P(F_{n+1}\circ F_{0,n}(x)=y)\\
+&=\P(F_{0,n+1}(x)=y)
 \end{split}
 \end{equation*}
 Ainsi, $F_{-(n+1),0}(x) \sim F_{0,n+1}(x)$.
@@ -238,7 +239,7 @@ $T_+$ et $T_-$ ont donc la même fonction de répartition.
 \underline{Ainsi, $T_+ \sim T_-$.}\\
 \\
 Soient $x \in \E$ et $n \geq T_-$,
-\[F_{-n,0}(x)=F_{-T_-,0}(F_{-n,-T_-}(x))=F_{-T_-,0}(x)\]\\
+\[\underline{F_{-n,0}(x)}=F_{-T_-,0}(F_{-n,-T_-}(x))=\underline{F_{-T_-,0}(x)}\]\\
 Supposons que $X^*$ suit la loi $\nu$, alors soit $x \in \E$:
 \begin{equation*}
 \begin{split}
